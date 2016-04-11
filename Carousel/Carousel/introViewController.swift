@@ -9,18 +9,28 @@
 import UIKit
 
 class introViewController: UIViewController {
+    
+    @IBOutlet var introScrollView: UIScrollView!
+    @IBOutlet weak var introImage: UIImageView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+            //set scrollview size to fit the image
+            introScrollView.contentSize = introImage.image!.size
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+
     
+    @IBAction func signInButton(sender: AnyObject) {
+        self.performSegueWithIdentifier("signInSegue", sender: self)
+    }
 
     /*
     // MARK: - Navigation

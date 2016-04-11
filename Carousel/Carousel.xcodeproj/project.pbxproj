@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		60D226DB1CBC290F00FE97A4 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D226DA1CBC290F00FE97A4 /* LoginViewController.swift */; };
 		D46E7F8E1CB493340064677D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46E7F8D1CB493340064677D /* AppDelegate.swift */; };
 		D46E7F901CB493340064677D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46E7F8F1CB493340064677D /* ViewController.swift */; };
 		D46E7F931CB493340064677D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D46E7F911CB493340064677D /* Main.storyboard */; };
@@ -36,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		60D226DA1CBC290F00FE97A4 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = Carousel/LoginViewController.swift; sourceTree = "<group>"; };
 		D46E7F8A1CB493340064677D /* Carousel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Carousel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D46E7F8D1CB493340064677D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D46E7F8F1CB493340064677D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -81,6 +83,7 @@
 		D46E7F811CB493340064677D = {
 			isa = PBXGroup;
 			children = (
+				60D226DA1CBC290F00FE97A4 /* LoginViewController.swift */,
 				D46E7F8C1CB493340064677D /* Carousel */,
 				D46E7FA11CB493340064677D /* CarouselTests */,
 				D46E7FAC1CB493340064677D /* CarouselUITests */,
@@ -265,6 +268,7 @@
 				D46E7F901CB493340064677D /* ViewController.swift in Sources */,
 				D46E7FBC1CB493730064677D /* Common.swift in Sources */,
 				D46E7F8E1CB493340064677D /* AppDelegate.swift in Sources */,
+				60D226DB1CBC290F00FE97A4 /* LoginViewController.swift in Sources */,
 				D46E7FBE1CB496B20064677D /* introViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -490,6 +494,7 @@
 				D46E7FB41CB493340064677D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D46E7FB51CB493340064677D /* Build configuration list for PBXNativeTarget "CarouselTests" */ = {
 			isa = XCConfigurationList;
@@ -498,6 +503,7 @@
 				D46E7FB71CB493340064677D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D46E7FB81CB493340064677D /* Build configuration list for PBXNativeTarget "CarouselUITests" */ = {
 			isa = XCConfigurationList;
@@ -506,6 +512,7 @@
 				D46E7FBA1CB493340064677D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
