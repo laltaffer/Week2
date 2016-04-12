@@ -73,4 +73,7 @@ GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
 Describe any challenges encountered while building the app.
 
+I kept on seeing very strange behaviors on my sign in screen. The keyboard wouldn't always appear, cursor still doesn't appear. And even manually toggling the keyboard wouldn't work all the time. I added print statements to the keyboard methods and when I tapped in the text fields I would occasionally but consistently see the wrong method being called. For example, on initial presentation of the sign in screen i would tap into the email field and see the keyboardWillHide method fired. 
+
+
 * Any libraries or borrowed content.
