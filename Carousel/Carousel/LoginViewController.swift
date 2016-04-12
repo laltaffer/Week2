@@ -65,12 +65,19 @@ class LoginViewController: UIViewController, UIScrollViewDelegate {
 
     @IBAction func loginButtonAction(sender: UIButton) {
         
-        loginIndicator.startAnimating()
+        
         loginButton.selected = true
         
         if emailField.text == "user" && passwordField.text == "pass" {
-            
-            delay(2, closure: {
+            loginIndicator.startAnimating()
+            let signingIn = UIAlertController(title: "Signing in... ", message: nil, preferredStyle: .Alert)
+            presentViewController(signingIn, animated: true) {
+            }
+
+            delay(1, closure: {
+                signingIn.dismissViewControllerAnimated(true, completion: {
+                    
+                })
                 self.loginIndicator.stopAnimating()
                 self.loginButton.selected = false
                 self.performSegueWithIdentifier("tutorialSegue", sender: nil)
@@ -89,7 +96,7 @@ class LoginViewController: UIViewController, UIScrollViewDelegate {
             presentViewController(alertController, animated: true) {
             }
         } else if passwordField.text!.isEmpty {
-            print("Password check failed")
+           
             let alertController = UIAlertController(title: "Password Required", message: "Please enter your password", preferredStyle: .Alert)
             let cancelAction = UIAlertAction(title: "OK", style: .Cancel) { (action) in
                 
@@ -102,11 +109,7 @@ class LoginViewController: UIViewController, UIScrollViewDelegate {
             })
             presentViewController(alertController, animated: true) {
             }
-        }
-            
-            
-        else {
-            print("got to else in didPressLogin")
+        }else {
             let alertController = UIAlertController(title: "Username or Password Incorrrect", message: "Please enter your credentials", preferredStyle: .Alert)
             let cancelAction = UIAlertAction(title: "OK", style: .Cancel) { (action) in
                 

@@ -1,5 +1,5 @@
 //
-//  TimelineViewController.swift
+//  ConversationsViewController.swift
 //  Carousel
 //
 //  Created by Altaffer, Lawrence on 4/11/16.
@@ -8,17 +8,12 @@
 
 import UIKit
 
-class TimelineViewController: UIViewController {
-    @IBOutlet weak var timelineNav: UIImageView!
-    @IBOutlet weak var scrollView: UIScrollView!
-    @IBOutlet weak var scrubberNav: UIImageView!
-    @IBOutlet weak var timelineImage: UIImageView!
-    
+class ConversationsViewController: UIViewController {
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        //set scrollview size to fit the image
-        scrollView.contentSize = timelineImage.image!.size
+        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
@@ -26,15 +21,10 @@ class TimelineViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func settingsButton(sender: UIButton) {
-        performSegueWithIdentifier("settingsSegue", sender: nil)
-        
+    @IBAction func backButton(sender: UIButton) {
+        navigationController?.popToRootViewControllerAnimated(true)
     }
 
-    @IBAction func conversationsButton(sender: UIButton) {
-        performSegueWithIdentifier("conversationsSegue", sender: nil)
-    }
-    
     /*
     // MARK: - Navigation
 

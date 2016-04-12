@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		6055910A1CBC982600AAF8A4 /* TimelineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 605591091CBC982600AAF8A4 /* TimelineViewController.swift */; };
+		6055910C1CBC9FEB00AAF8A4 /* ConversationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6055910B1CBC9FEB00AAF8A4 /* ConversationsViewController.swift */; };
+		6055910E1CBCA29700AAF8A4 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6055910D1CBCA29700AAF8A4 /* SettingsViewController.swift */; };
 		608902BC1CBC8E2D00636A96 /* TutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 608902BB1CBC8E2D00636A96 /* TutorialViewController.swift */; };
 		60D226DB1CBC290F00FE97A4 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D226DA1CBC290F00FE97A4 /* LoginViewController.swift */; };
 		D46E7F8E1CB493340064677D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46E7F8D1CB493340064677D /* AppDelegate.swift */; };
@@ -40,6 +42,8 @@
 
 /* Begin PBXFileReference section */
 		605591091CBC982600AAF8A4 /* TimelineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineViewController.swift; sourceTree = "<group>"; };
+		6055910B1CBC9FEB00AAF8A4 /* ConversationsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConversationsViewController.swift; sourceTree = "<group>"; };
+		6055910D1CBCA29700AAF8A4 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		608902BB1CBC8E2D00636A96 /* TutorialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TutorialViewController.swift; path = Carousel/TutorialViewController.swift; sourceTree = "<group>"; };
 		60D226DA1CBC290F00FE97A4 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = Carousel/LoginViewController.swift; sourceTree = "<group>"; };
 		D46E7F8A1CB493340064677D /* Carousel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Carousel.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -113,6 +117,8 @@
 				D46E7F8F1CB493340064677D /* ViewController.swift */,
 				D46E7FBB1CB493730064677D /* Common.swift */,
 				D46E7F911CB493340064677D /* Main.storyboard */,
+				6055910D1CBCA29700AAF8A4 /* SettingsViewController.swift */,
+				6055910B1CBC9FEB00AAF8A4 /* ConversationsViewController.swift */,
 				605591091CBC982600AAF8A4 /* TimelineViewController.swift */,
 				D46E7FBD1CB496B20064677D /* introViewController.swift */,
 				D46E7F941CB493340064677D /* Assets.xcassets */,
@@ -274,10 +280,12 @@
 				D46E7F901CB493340064677D /* ViewController.swift in Sources */,
 				D46E7FBC1CB493730064677D /* Common.swift in Sources */,
 				D46E7F8E1CB493340064677D /* AppDelegate.swift in Sources */,
+				6055910C1CBC9FEB00AAF8A4 /* ConversationsViewController.swift in Sources */,
 				60D226DB1CBC290F00FE97A4 /* LoginViewController.swift in Sources */,
 				6055910A1CBC982600AAF8A4 /* TimelineViewController.swift in Sources */,
 				608902BC1CBC8E2D00636A96 /* TutorialViewController.swift in Sources */,
 				D46E7FBE1CB496B20064677D /* introViewController.swift in Sources */,
+				6055910E1CBCA29700AAF8A4 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
