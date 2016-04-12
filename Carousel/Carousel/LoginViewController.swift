@@ -11,13 +11,17 @@ import UIKit
 class LoginViewController: UIViewController, UIScrollViewDelegate {
 
     @IBOutlet weak var loginScrollView: UIScrollView!
-    
+    @IBOutlet weak var loginNavBar: UIImageView!
     @IBOutlet weak var fieldParent: UIView!
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
     
     @IBOutlet weak var buttonParent: UIView!
+    @IBOutlet weak var loginButton: UIButton!
+    @IBOutlet weak var loginIndicator: UIActivityIndicatorView!
     
+    var buttonInitialY: CGFloat!
+    var buttonOffset: CGFloat!
     
     
     override func viewDidLoad() {
@@ -29,6 +33,11 @@ class LoginViewController: UIViewController, UIScrollViewDelegate {
         
         loginScrollView.delegate = self
         
+        buttonInitialY = buttonParent.frame.origin.y
+        buttonOffset = -120
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(keyboardWillShow(_:)), name:UIKeyboardWillShowNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(keyboardWillHide(_:)), name:UIKeyboardWillHideNotification, object: nil)
 
     }
 
@@ -38,20 +47,81 @@ class LoginViewController: UIViewController, UIScrollViewDelegate {
     }
     
     func keyboardWillShow(notification: NSNotification!){
+        print("KB up")
         
+        //Move the button up
+        buttonParent.frame.origin.y = buttonInitialY + buttonOffset
+        //Scroll the scrollview
+        loginScrollView.contentOffset.y = loginScrollView.contentInset.bottom
     }
-    func keyboardWillHide(notification: NSNotification!){
+    
+    func keyboardWillHide(notification: NSNotification!) {
+        print("KB down")
         
+        // Move back down to it's original position
+        loginScrollView.contentOffset.y = loginScrollView.contentInset.top
+        buttonParent.frame.origin.y = buttonInitialY
     }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    @IBAction func loginButtonAction(sender: UIButton) {
+        
+        loginIndicator.startAnimating()
+        loginButton.selected = true
+        
+        if emailField.text == "user" && passwordField.text == "pass" {
+            
+            delay(2, closure: {
+                self.loginIndicator.stopAnimating()
+                self.loginButton.selected = false
+                self.performSegueWithIdentifier("tutorialSegue", sender: nil)
+                
+            })
+            
+        } else if emailField.text!.isEmpty {
+            let alertController = UIAlertController(title: "Email is Required", message: "Please enter your email", preferredStyle: .Alert)
+            let cancelAction = UIAlertAction(title: "OK", style: .Cancel) { (action) in}
+            alertController.addAction(cancelAction)
+            
+            delay(2, closure: { () -> () in
+                self.loginIndicator.stopAnimating()
+                self.loginButton.selected = false
+            })
+            presentViewController(alertController, animated: true) {
+            }
+        } else if passwordField.text!.isEmpty {
+            print("Password check failed")
+            let alertController = UIAlertController(title: "Password Required", message: "Please enter your password", preferredStyle: .Alert)
+            let cancelAction = UIAlertAction(title: "OK", style: .Cancel) { (action) in
+                
+            }
+            alertController.addAction(cancelAction)
+            
+            delay(2, closure: {
+                self.loginIndicator.stopAnimating()
+                self.loginButton.selected = false
+            })
+            presentViewController(alertController, animated: true) {
+            }
+        }
+            
+            
+        else {
+            print("got to else in didPressLogin")
+            let alertController = UIAlertController(title: "Username or Password Incorrrect", message: "Please enter your credentials", preferredStyle: .Alert)
+            let cancelAction = UIAlertAction(title: "OK", style: .Cancel) { (action) in
+                
+            }
+            alertController.addAction(cancelAction)
+            
+            delay(2, closure: { () -> () in
+                self.loginIndicator.stopAnimating()
+                self.loginButton.selected = false
+            })
+            presentViewController(alertController, animated: true) {
+            }
+        }
     }
-    */
+    
+    
 
 }
